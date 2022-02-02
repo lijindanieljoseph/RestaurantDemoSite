@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--need to include the CSS files for font awesome and bootstrap-social in the index.html file. Add the following code to the head of the file after the links for importing Bootstrap CSS classes. -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>Ristorante Con Fusion</title>
+</head>
+
+<body>
+    <!--basic navvigation bar-->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <!--toggler button with three horizontal lines
+            Creating a responsive navigation bar
+We would like the navigation bar elements to collapse for shorter screens, to be replaced by a toggle button so that the items can be toggled on or off when required on small and extra small screens. This can be achieved by adding the following code to the navigation bar, just below the container div.This creates a button with three horizontal lines. For medium to extra large screens, this button is hidden. For small and extra small screens, this button becomes visible. This button will act as the toggle for the navbar items.-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--brand logo-->
+            <a class="navbar-brand mr-auto" href="#"><img src="./img/logo.png" height="30" width="41"></a>
+           <!--To hide the items from the navigation bar for the small screens, we need to enclose the ul within another div
+        By doing this, we are specifying that this div with collapse and navbar-collapse classes and with the id Navbar will be collapsed on small and xs screens, but can be toggled on or off when the toggle button is clicked. Note the use of data-toggle="collapse" data-target="#Navbar" within the button above. This specifies that the menu items are collapsed on small and xs screens when the toggle button is visible. They can be displayed or hidden by clicking the toggle button.-->
+           <div class="collapse navbar-collapse" id="Navbar">
+               <ul class="navbar-nav mr-auto">
+                <!--nav bar contents-->
+                <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"><!--ffa fa-home is for adding home icon and fa-lg represent size--></span> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+                <!--add login icon.use a span with the class navbar-text. This is what allows me to include a link into the navbar and show it as text.-->
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                    <span class="fa fa-sign-in"></span> Login</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!--add model that is sudden box that appear as pop up..in this it will be when login button is click then show the login form-->
+    <!-- create a modal, I will start off by saying div ID login modal. So, we give an ID to this modal so that it can be triggered from the navbar link and then class as "modal fade". So you see that the class is modal and fade means that when the modal is brought onto the screen, it'll fade onto the screen and the role is as a dialog. So, which means that it is displayed on top of the page. -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <!--create the second div with the class as modal-dialog and then inside here we will define the content of the actual modal here and close off the div. And so, this is to be the modal content will be structured here. So, inside this modal dialog we will create another div with the class modal content and close off the div and a typical modal will contain a modal-header. So, that's where the next div is going to host.-->
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <!-- in the header we are going to put in a button, a cross-button in the modal which when clicked will dismiss the modal. introduce a button with the type button and class close. So, you see that this is a button that is used to close the modal and then you will say, data-dismiss and then modal. So, what this means is that this particular button when clicked will dismiss the modal from the screen. And this button, I'm going to use the times,will display as a cross in the modals here-->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="jumbotron">
+        <div class="container ">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Ristorante con Fusion</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <!--add logo-->
+                <div class="col-12 col-sm align-self-center">
+                    <img src="./img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                    <!--add button with name Reserve Table then add tooltip means when click that button additional show more details..in this the tooltp that shows is Call us at with phone number.it work with javascript function which writen in under script content.add a data-toggle, data-placement and a title attribute to the <a> tag in order to introduce a tooltip.-->
+                    <a role="button" class="btn btn-block nav-link btn-warning"
+                    data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                    data-placement="bottom" href="#reserveform">Reserve Table</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <!--add image -->
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                            src="img/uthappizza.png" alt="Uthappizza">
+                    <div class="media-body">
+                        <h2 class="mt-0 order-sm-first">Uthappizza<!--add hot badge--><span class="badge badge-danger "> HOT</span><!--add price badge--><span class="badge badge-pill badge-secondary">$4.99</span></h2>
+                        <p class="d-none d-sm-block">
+                            A unique combination of Indian Uthappam (pancake) and
+                            Italian pizza, topped with Cerignola olives, ripe vine
+                            cherry tomatoes, Vidalia onion, Guntur chillies and
+                            Buffalo Paneer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-first col-md-3">
+                <h3>This Month's Promotions</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <!--add image -->
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet<!--add hot badge--><span class="badge badge-danger">NEW</span></h2>
+                        <p class="d-none d-sm-block">
+                            A Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person
+                        </p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail align-self-center"
+                            src="./img/buffet.png" alt="buffet">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                            src="./img/alberto.png" alt="Alberto Somayya">
+                    <div class="media-body">
+                        <h2 class="mt-0">Alberto Somayya</h2>
+                        <h4>Executive Chef</h4>
+                        <p class="d-none d-sm-block">
+                            Award winning three-star Michelin chef with wide
+                            International experience having worked closely with
+                            whos-who in the culinary world, he specializes in
+                            creating mouthwatering Indo-Italian fusion experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--make reservation card with form-->
+        <div class="row justify-content-md-center"><!--make row with position center-->
+            <div class="col-12 col-sm-8 align-self-center">
+                <div class="card">
+                    <!--card heading with yellow bg and white text-->
+                    <h3 class="card-header bg-warning text-white">Reserve A Table</h3>
+                    <div class="card card-body bg-light">
+                        <form id="reserve">
+                            <!--in this creeate a row in the form-->
+                            <div class="form-group row">
+                                <label for="guests" class="col-12 col-md-3 col-form-label"><!--in this name of guests take only take 2 columns from the form-group row-->Number of Guests</label>
+                                <!--radio 6 buttons in same line-->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">3</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <label class="form-check-label" for="inlineRadio4">4</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <label class="form-check-label" for="inlineRadio5">5</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
+                                    <label class="form-check-label" for="inlineRadio6">6</label>
+                                  </div>
+                                 </div>
+                                
+                            <div class="form-group row">
+                                <label for="date and time" class="col-12 col-md-2 col-form-label"><!--in this time and date take only take 2 columns from the form-group row-->Date and Time</label>
+                                <div class="col-md-4">
+                                    <input type="dateid" class="form-control" id="date" name="date" placeholder="Date">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="timeid" class="form-control" id="timeid" name="timeid" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-md-2 col-md-10">
+                                    <button type="submit" class="btn btn-primary">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+                      <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+                      <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+                      <i class="fa fa-envelope fa-lg"></i>: 
+                      <a href="mailto:confusion@food.net">confusion@food.net</a>
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-cente">
+                    <div class="text-center">
+                        <!--add social media icons-->
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+               <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+ <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+ <script src="node_modules/jquery/dist/jquery.slim.min.js"></script> 
+ <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <!--tooltip needs to be activated by adding a small Javascript code to the bottom of the page -->
+ <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+
+</html>
